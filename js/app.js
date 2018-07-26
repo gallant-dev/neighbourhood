@@ -69,10 +69,8 @@ var ViewModel = function() {
     //this function to find the marker for provided location. This will return
     //only the match with the highest index number.
     if(matchCount > 0){
-      console.log(matchCount + " matchs");
       return marker;
     } else {
-      console.log("No Markers Found");
       var markerLocations = [location];
       self.makeMarkers(markerLocations);
       return self.getMarkerForLocation(location);
@@ -111,7 +109,6 @@ var ViewModel = function() {
     //If matchCount is greater than 0 return the matching location. This would
     //return only the highest index match.
     if(matchCount > 0){
-      console.log(matchCount + " matchs");
       return location;
     } else {
       console.log("No Location Found");
@@ -132,7 +129,6 @@ var ViewModel = function() {
        locationLatLng.equals(self.markers()[i].getPosition())){
         matchCount++;
         return true;
-        console.log(matchCount + " Matchs Found");
       }
     }
     if(matchCount = 0){
@@ -174,7 +170,6 @@ var ViewModel = function() {
     //the string to pass into the url.
     if(searchInputValue){
       queryParam = 'query=' + searchInputValue + '&';
-      console.log(queryParam);
     } else {
       //Define a default query paramater.
       queryParam = 'query=Restaurant&';
@@ -385,15 +380,18 @@ var ViewModel = function() {
   //markers if there aren't any on.
   self.toggleAllMarkers = async function() {
     //Creates an empty marker array to track active markers.
-    let activeMarkers = await function(){
-	let markers = [];
-	for(i = 0; i < self.markers.length; i++){
+    let activeMarkersPromise = new Promise(function(resolve, reject) {
+        
+	let markersArray = [];
+        for(i = 0; i < self.markers().length; i++){
                 if(self.markers()[i].getMap()){
-                        markers.push(markers()[i]);
+                        markersArray.push(self.markers()[i]);
                 }
-        }
-	return markers;
-    }
+        }  
+	resolve(markersArray);
+    });
+
+    let activeMarkers = await activeMarkersPromise;
     //If there are any markers in the activeMarkers array turn turn off
     //only the markers that are active. If there are no markers active,
     //make all makers active for all locations.
