@@ -175,6 +175,9 @@ var ViewModel = function() {
     if(searchInputValue){
       queryParam = 'query=' + searchInputValue + '&';
       console.log(queryParam);
+    } else {
+      //Define a default query paramater.
+      queryParam = 'query=Restaurant&';
     }
 
     //When the xhttp state changes, check if the request is good. If it is,
@@ -380,17 +383,17 @@ var ViewModel = function() {
 
   //This function turns off all markers if there are any, or turns on all
   //markers if there aren't any on.
-  self.toggleAllMarkers = function() {
+  self.toggleAllMarkers = async function() {
     //Creates an empty marker array to track active markers.
-    var activeMarkers = [];
-    //For each of the markers in the markers array if they are active, push
-    //the marker to the activeMarkers array.
-    for(i = 0; i < self.markers().length; i++){
-      if(self.markers()[i].getMap()){
-        activeMarkers.push(self.markers()[i]);
-      }
+    let activeMarkers = await function(){
+	let markers = [];
+	for(i = 0; i < self.markers.length; i++){
+                if(self.markers()[i].getMap()){
+                        markers.push(markers()[i]);
+                }
+        }
+	return markers;
     }
-
     //If there are any markers in the activeMarkers array turn turn off
     //only the markers that are active. If there are no markers active,
     //make all makers active for all locations.
