@@ -50,6 +50,459 @@ li:hover, button:hover, select:hover, input:hover {
   height: 200px;
 }
 
+@media screen and (min-width: 0px) and (max-width: 400px) and (max-height: 430px) {
+ h1 {
+    font-size: 1.2em;
+    padding: 1%;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  input, select {
+    font-size: 1em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1em;
+  }
+
+  li {
+    min-height: 8.4%;
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    height: 25vh;
+    overflow: auto;
+  }
+
+  #map {
+    bottom:0px;
+    height: 100%;
+    left: 75%;
+    position: absolute;
+    right: 0px;
+  }
+
+  #menu-button {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  #button-container {
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #button-container:hover {
+    background-color: #3399ffba;
+    border-radius: 5px;
+  }
+
+  .container {
+    width: 75vw;
+  }
+
+  .top-of-menu {
+    height: 55vh;
+    width: 75vw;
+  }
+
+  .location-container {
+    height: 45vh;
+  }
+
+}
+
+@media screen and (min-width: 400px) and (max-width: 521px)  and (max-height: 430px) {
+  h1 {
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  input, select {
+    font-size: 1em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.4em;
+  }
+
+  li {
+    min-height: 10%;
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    height: 32.5vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 75%;
+    position: absolute;
+    right: 0px;
+  }
+
+  #menu-button {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  #button-container {
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #button-container:hover {
+    background-color: #3399ffba;
+    border-radius: 5px;
+  }
+
+  .container {
+    width: 75vw;
+  }
+
+  .top-of-menu {
+    height: 40vh;
+  }
+
+  .location-container {
+    height: 60vh;
+    width: 72vw;
+  }
+}
+
+@media screen and (min-width: 521px) and (max-width: 823px) and (max-height: 430px) {
+  h1 {
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0.5%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  input, select {
+    font-size: 1.2em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.2em;
+  }
+
+  li {
+    min-height: 10%;
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 33vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 75%;
+    position: absolute;
+    right: 0px;
+  }
+
+  #menu-button {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  #button-container {
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #button-container:hover {
+    background-color: #3399ffba;
+    border-radius: 5px;
+  }
+
+  .container {
+    width: 75vw;
+  }
+
+  .top-of-menu {
+    height: 40vh;
+  }
+
+  .locations-container {
+    height: 60vh;
+    width: 75vw;
+  }
+}
+
+@media screen and (min-width: 823px) and (max-width: 1049px) and (max-height: 430px) {
+  h1 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 1%;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  input, select {
+    font-size: 1.1em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.1em;
+  }
+
+  li {
+    height: 10%;
+    font-size: 1.1em;
+  }
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 47.6vh;
+    overflow-y: scroll;
+    oveerflow-x: hidden;
+  }
+
+  #button-container {
+    visibility: hidden;
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 45%;
+    position: absolute;
+    right: 0px;
+  }
+
+  .container {
+    width: 45vw;
+  }
+
+  .top-of-menu {
+    height: 40vh;
+  }
+
+  .locations-container {
+    height: 60vh;
+    width: 45vw;
+  }
+}
+
+@media screen and (min-width: 1049px) and (max-width: 1312px) and (max-height: 430px) {
+  h1 {
+    font-size: 1.4em;
+    margin: 0;
+    padding: 1%;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  input, select {
+    font-size: 1.2em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.2em;
+  }
+
+  li {
+    min-height: 10%;
+    font-size: 1.1em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    height: 44.1vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #button-container {
+    visibility: hidden;
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 34%;
+    position: absolute;
+    right: 0px;
+  }
+
+  .container {
+    width: 34vw;
+  }
+
+  .top-of-menu {
+    height: 40vh;
+  }
+
+  .locations-container {
+    height: 60vh;
+    width: 34vw;
+  }
+}
+
+@media screen and (min-width: 1312px) and (max-height: 430px) {
+  li {
+    min-height: 10%;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 1%;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    padding: 1%;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  input, select {
+    font-size: 1.2em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 44.1vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #button-container {
+    visibility: hidden;
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #map {
+    height: 100vh;
+    width: 75%;
+    left: 25%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .container {
+    width: 25vw;
+  }
+
+  .top-of-menu {
+    height: 40vh;
+  }
+
+  .locations-container {
+    height: 60vh;
+    width: 25vw;
+  }
+}
+
 @media screen and (min-width: 0px) and (max-width: 400px) and (min-height: 430px) {
  h1 {
     font-size: 1.2em;
@@ -435,6 +888,8 @@ li:hover, button:hover, select:hover, input:hover {
 
   h1 {
     font-size: 1.4em;
+    margin: 0;
+    padding: 1%;
   }
 
   h2 {
