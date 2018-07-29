@@ -3,16 +3,22 @@
 }
 
 html, body, .container {
- height: 100%;
- margin: 0;
- padding: 0;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
 
 h1 {
   color: grey;
   font-weight: bolder;
   text-transform: uppercase;
 }
+
+hr {
+  margin: 0px;
+}
+
 
 input {
   margin: 0.25em;
@@ -22,6 +28,8 @@ input {
 li {
   margin: 0;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 li:hover, button:hover, select:hover, input:hover {
@@ -29,10 +37,12 @@ li:hover, button:hover, select:hover, input:hover {
   color: white;
 }
 
-.options-box, locations-container {
- width: 100%;
- margin: 0;
- padding: 0;
+.options-box {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
 }
 
 #pano {
@@ -40,8 +50,8 @@ li:hover, button:hover, select:hover, input:hover {
   height: 200px;
 }
 
-@media screen and (min-width: 0px) and (max-width: 521px) {
-  h1 {
+@media screen and (min-width: 0px) and (max-width: 400px) and (min-height: 430px) {
+ h1 {
     font-size: 1.2em;
   }
 
@@ -59,93 +69,18 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   label {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   li {
-    min-height: 10%;
+    min-height: 8.4%;
     font-size: 1.2em;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-    width: inherit;
-    height: 53.5%;
-    overflow: auto;
-  }
-
-
-  #map {
-    bottom:0px;
     height: 100%;
-    left: 75%;
-    position: absolute;
-    right: 0px;
-  }
-
-  #menu-button {
-    width: 100%;
-    height: 100%;
-    transform: scaleX(-1);
-  }
-
-  #button-container {
-    position: absolute;
-    left: 75%;
-    height: 15%;
-    width: 7%;
-    bottom: 37.5%;
-    z-index: 3;
-  }
-
-  #button-container:hover {
-    background-color: #3399ffba;
-    border-radius: 5px;
-  }
-
-  .container {
-    width: 75%;
-  }
-
-  .top-of-menu {
-    height: 35%;
-  }
-}
-
-@media screen and (min-width: 521px) and (max-width: 784px) {
-  h1 {
-    font-size: 1.6em;
-  }
-
-  h2 {
-    font-size: 1.6em;
-  }
-
-  input, select {
-    font-size: 1.4em;
-    border-width: thin;
-    border-color: grey;
-    background-color: white;
-    font-weight: bold;
-    color: grey;
-  }
-
-  label {
-    font-size: 1.4em;
-  }
-
-  li {
-    min-height: 10%;
-    font-size: 1.6em;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: inherit;
-    height: 53.5%;
     overflow: auto;
   }
 
@@ -182,21 +117,28 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   .top-of-menu {
-    height: 35%;
+    height: 45%;
   }
+
+  .location-container {
+    height: 55%;
+  }
+
 }
 
-@media screen and (min-width: 784px) and (max-width: 1049px) {
+@media screen and (min-width: 400px) and (max-width: 521px)  and (min-height: 430px) {
   h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
   }
 
   h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   input, select {
-    font-size: 1.4em;
+    font-size: 1em;
     border-width: thin;
     border-color: grey;
     background-color: white;
@@ -210,7 +152,167 @@ li:hover, button:hover, select:hover, input:hover {
 
   li {
     min-height: 10%;
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    height: 58.5vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 75%;
+    position: absolute;
+    right: 0px;
+  }
+
+  #menu-button {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  #button-container {
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #button-container:hover {
+    background-color: #3399ffba;
+    border-radius: 5px;
+  }
+
+  .container {
+    width: 75vw;
+  }
+
+  .top-of-menu {
+    height: 30vh;
+  }
+
+  .location-container {
+    height: 60vh;
+    width: 72vw;
+  }
+}
+
+@media screen and (min-width: 521px) and (max-width: 823px) and (min-height: 430px) {
+  h1 {
     font-size: 1.4em;
+    margin: 0;
+    padding: 0.5%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  input, select {
+    font-size: 1.2em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.2em;
+  }
+
+  li {
+    min-height: 10%;
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #map {
+    bottom:0px;
+    height: 100vh;
+    left: 75%;
+    position: absolute;
+    right: 0px;
+  }
+
+  #menu-button {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  #button-container {
+    position: absolute;
+    left: 75%;
+    height: 15%;
+    width: 7%;
+    bottom: 37.5%;
+    z-index: 3;
+  }
+
+  #button-container:hover {
+    background-color: #3399ffba;
+    border-radius: 5px;
+  }
+
+  .container {
+    width: 75vw;
+  }
+
+  .top-of-menu {
+    height: 30vh;
+  }
+
+  .locations-container {
+    height: 70vh;
+    width: 75vw;
+  }
+}
+
+@media screen and (min-width: 823px) and (max-width: 1049px) and (min-height: 430px) {
+  h1 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 1%;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  input, select {
+    font-size: 1.1em;
+    border-width: thin;
+    border-color: grey;
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+  }
+
+  label {
+    font-size: 1.1em;
+  }
+
+  li {
+    height: 10%;
+    font-size: 1.1em;
   }
 
 
@@ -218,9 +320,9 @@ li:hover, button:hover, select:hover, input:hover {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: inherit;
-    height: 48%;
-    overflow: auto;
+    height: 57.6vh;
+    overflow-y: scroll;
+    oveerflow-x: hidden;
   }
 
   #button-container {
@@ -235,24 +337,31 @@ li:hover, button:hover, select:hover, input:hover {
 
   #map {
     bottom:0px;
-    height: 100%;
+    height: 100vh;
     left: 45%;
     position: absolute;
     right: 0px;
   }
 
   .container {
-    width: 45%;
+    width: 45vw;
   }
 
   .top-of-menu {
-    height: 38%;
+    height: 30vh;
+  }
+
+  .locations-container {
+    height: 70vh;
+    width: 44.35vw;
   }
 }
 
-@media screen and (min-width: 1049px) and (max-width: 1312px) {
+@media screen and (min-width: 1049px) and (max-width: 1312px) and (min-height: 430px) {
   h1 {
     font-size: 1.4em;
+    margin: 0;
+    padding: 1%;
   }
 
   h2 {
@@ -269,20 +378,20 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   label {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   li {
     min-height: 10%;
-    font-size: 1.4em;
+    font-size: 1.1em;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-    width: 100%;
-    height: 56.6%;
-    overflow: auto;
+    height: 59.0vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   #button-container {
@@ -297,7 +406,7 @@ li:hover, button:hover, select:hover, input:hover {
 
   #map {
     bottom:0px;
-    height: 100%;
+    height: 100vh;
     left: 34%;
     position: absolute;
     right: 0px;
@@ -308,14 +417,20 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   .top-of-menu {
-    height: 30%;
+    height: 30vh;
+  }
+
+  .locations-container {
+    height: 70vh;
   }
 }
 
-@media screen and (min-width: 1312px) {
+@media screen and (min-width: 1312px) and (min-height: 430px) {
   li {
     min-height: 10%;
     font-size: 1.4em;
+    margin: 0;
+    padding: 1%;
   }
 
   h1 {
@@ -343,9 +458,9 @@ li:hover, button:hover, select:hover, input:hover {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: inherit;
-    height: 57.6%;
-    overflow: auto;
+    height: 59.0vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   #button-container {
@@ -359,7 +474,7 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   #map { 
-    height: 100%;
+    height: 100vh;
     width: 75%;
     left: 25%;
     position: absolute;
@@ -373,6 +488,11 @@ li:hover, button:hover, select:hover, input:hover {
   }
 
   .top-of-menu {
-    height: 30%;
+    height: 30vh;
+  }
+  
+  .locations-container {
+    height: 70vh;
+    width: 24.7vw;
   }
 }
