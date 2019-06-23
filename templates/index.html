@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+﻿<!doctype HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -31,50 +31,53 @@
 </head>
 
   <body>
-    <div class="container">
-      <div id="menu" class="options-box">
-        <div class="top-of-menu">
-          <h1>What's Around?</h1>
-          <hr>
-          <div>
-            <label id="search-params-label">Look For</label>
-            <input id="search-params" type="text" placeholder="What?">
-            <label id="search-params-label-2">near</label>
-          </div>
-          <div>
-            <input id="location" type="text" placeholder="Where?">
-            <input id="update-locations" type="button" value="Search" data-bind="click: setCurrentFocus">
-            <select id="search-limit" data-bind="value: searchLimit">
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="30">30</option>
-              <option value="40">40</option>
-              <option value="50">50</option>
-              <select>
-                <label id="limit-label">Results</label>
-          </div>
-          <hr>
-          <div>
-            <input id="show-locations" type="button" value="Toggle Location Markers" data-bind="click: toggleAllMarkers">
-          </div>
-          <hr>
-        </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="menu" class="col-4">
+                <div class="row">
+                    <h1>What's Around?</h1>
+                </div>
+                <div class="row">
+                    <label id="search-params-label">Look For</label>
+                    <input id="search-params" type="text" placeholder="What?">
+                    <label id="search-params-label-2">near</label>
+                </div>
+                <div class="row">
+                    <input id="location" type="text" placeholder="Where?">
+                    <input id="update-locations" type="button" value="Search" data-bind="click: setCurrentFocus">
+                    <select id="search-limit" data-bind="value: searchLimit">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    <label id="limit-label">Results</label>
+                </div>
+                <div class="row">
+                    <input id="show-locations" type="button" value="Toggle Location Markers" data-bind="click: toggleAllMarkers">
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <h2>Locations: </h2>
+                    </div>
+                    <div class="row">
+                        <ul class="group-list" data-bind="foreach: locations">
+                            <li class="group-list-item" data-bind="text: title, attr: {'id': 'loc-' + $index()}, click: $parent.showLocation"></li>
+                        </ul>
+                    </div>
+                </div>
 
-        <div class="locations-container">
-          <h2>Locations: </h2>
-          <ul data-bind="foreach: locations">
-            <li data-bind="text: title, attr: {'id': 'loc-' + $index()}, click: $parent.showLocation"></li>
-          </ul>
+                <div id="button-container">
+                    <img id="menu-button" src="img/2018-06-13_SideArrow.png" data-bind="click: showMenu"><img>
+                </div>
+            </div>
+            <div class="col-6">
+                <div id="map"></div>
+            </div>
         </div>
-      </div>
-
-      <div id="button-container">
-        <img id="menu-button" src="img/2018-06-13_SideArrow.png" data-bind="click: showMenu"><img>
-      </div>
     </div>
 
-
-    <div id="map"></div>
 
     <script src="js/lib/knockout-3.4.2.js"></script>
     <script src="js/app.js"></script>
