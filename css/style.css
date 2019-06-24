@@ -86,13 +86,14 @@ li:hover, button:hover, select:hover, input:hover {
     overflow: auto;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100%;
     left: 75%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   #menu-button {
     width: 100%;
@@ -247,14 +248,14 @@ li:hover, button:hover, select:hover, input:hover {
     overflow-y: scroll;
     overflow-x: hidden;
   }
-
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 75%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   #menu-button {
     width: 100%;
@@ -339,13 +340,14 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 45%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   .container {
     width: 45vw;
@@ -408,13 +410,14 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 34%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   .container {
     width: 34vw;
@@ -480,6 +483,7 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map {
     height: 100vh;
     width: 75%;
@@ -488,7 +492,7 @@ li:hover, button:hover, select:hover, input:hover {
     bottom: 0;
     right: 0;
     top: 0;
-  }
+  }*/
 
   .container {
     width: 25vw;
@@ -538,13 +542,14 @@ li:hover, button:hover, select:hover, input:hover {
     overflow: auto;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100%;
     left: 75%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   #menu-button {
     width: 100%;
@@ -617,14 +622,14 @@ li:hover, button:hover, select:hover, input:hover {
     overflow-x: hidden;
   }
 
-
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 75%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   #menu-button {
     width: 100%;
@@ -697,14 +702,15 @@ li:hover, button:hover, select:hover, input:hover {
     overflow-y: scroll;
     overflow-x: hidden;
   }
-
+  
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 75%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   #menu-button {
     width: 100%;
@@ -789,13 +795,14 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 45%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   .container {
     width: 45vw;
@@ -858,13 +865,14 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map {
     bottom:0px;
     height: 100vh;
     left: 34%;
     position: absolute;
     right: 0px;
-  }
+  }*/
 
   .container {
     width: 34%;
@@ -929,6 +937,7 @@ li:hover, button:hover, select:hover, input:hover {
     z-index: 3;
   }
 
+  /*
   #map { 
     height: 100vh;
     width: 75%;
@@ -937,7 +946,7 @@ li:hover, button:hover, select:hover, input:hover {
     bottom: 0;
     right: 0;
     top: 0;
-  }
+  }*/
 
   .container {
     width: 25%;
