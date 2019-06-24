@@ -74,16 +74,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="row">
-                        <div class="col">
-                            <h2>Locations: </h2>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Locations: </h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <ul class="group-list" data-bind="foreach: locations">
-                                <li class="group-list-item" data-bind="text: title, attr: {'id': 'loc-' + $index()}, click: $parent.showLocation"></li>
-                            </ul>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="group-list" data-bind="foreach: locations">
+                                    <li class="group-list-item" data-bind="text: title, attr: {'id': 'loc-' + $index()}, click: $parent.showLocation"></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
