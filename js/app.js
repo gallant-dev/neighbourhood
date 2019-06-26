@@ -502,6 +502,7 @@ function initMap() {
   vm.updateMap();
 }
 
+
 //Defines Breakpoints.
 $(window).on('resize', function () {
     if ($(window).height() < 400) {
@@ -511,7 +512,13 @@ $(window).on('resize', function () {
         $('#menu').addClass('col-9');
         $('#menu').removeClass('col-3');
     }
-    else if
+    else if ($(window).height() >= 400) {
+        $('#map').addClass('col-9');
+        $('#map').removeClass('col-3');
+
+        $('#menu').addClass('col-3');
+        $('#menu').removeClass('col-9');
+    }
 });
 
 //Crete a new ViewModel and apply Knockout bindings to it.
