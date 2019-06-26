@@ -1,4 +1,4 @@
-//Define the knockout ViewModel.
+//Defines the knockout ViewModel.
 var ViewModel = function() {
   //Declare knockout observables.
   var self = this;
@@ -501,6 +501,18 @@ function initMap() {
   vm.updateLocations();
   vm.updateMap();
 }
+
+//Defines Breakpoints.
+$(window).on('resize', function () {
+    if ($(window).height() < 400) {
+        $('#map').addClass('col-3');
+        $('#map').removeClass('col-9');
+
+        $('#menu').addClass('col-9');
+        $('#menu').removeClass('col-3');
+    }
+    else if
+})
 
 //Crete a new ViewModel and apply Knockout bindings to it.
 var vm = new ViewModel();
