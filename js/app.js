@@ -502,9 +502,8 @@ function initMap() {
   vm.updateMap();
 }
 
-
-//Defines Breakpoints.
-$(window).on('resize', function () {
+//Modifies classes at specified breakpoints.
+function calculateLayout() {
     if ($(window).width() < 400) {
         $('#map').removeClass();
         $('#map').addClass('col-3');
@@ -547,7 +546,11 @@ $(window).on('resize', function () {
         $('#menu').removeClass();
         $('#menu').addClass('col-2');
     }
-});
+}
+//Add debounce to prevent resizing function from being call too frequently.
+var stallLayout = _.debounce(calculateLayout, 300);
+
+$(window).on('resize', stallLayout);
 
 //Crete a new ViewModel and apply Knockout bindings to it.
 var vm = new ViewModel();
