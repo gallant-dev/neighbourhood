@@ -171,8 +171,6 @@ var ViewModel = function() {
   //This function queries the foursquare API to populate the locations array
   //with the venues obtained.
   self.updateLocations = function(searchInput){
-    //Set the location to be searched to the current focus fo the application.
-    var locationSearch = self.currentFocus();
     //Define a new XMLHttpRequest object.
     var xhttp = new XMLHttpRequest();
 
