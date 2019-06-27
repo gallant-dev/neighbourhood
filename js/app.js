@@ -1,6 +1,3 @@
-//Defines Javascript libraries.
-const _ = require('underscore');
-
 //Defines the knockout ViewModel.
 var ViewModel = function() {
   //Declare knockout observables.
