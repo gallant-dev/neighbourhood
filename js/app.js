@@ -167,42 +167,44 @@ var ViewModel = function() {
     //If there is a a value entered into the text box, take it and construct
     //the string to pass into the url.
     if(searchInputValue){
-      queryParam = 'query=' + searchInputValue + '&';
+        queryParam = 'query=' + searchInputValue + '&';
+        //When the xhttp state changes, check if the request is good. If it is,
+        //parse through the json object storing the results. For each of the venues
+        //returned in the response create an array item and push it into the
+        //locations array.
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var venues = JSON.parse(this.response).response.venues;
+                self.locations([]);
+                for (i = 0; i < venues.length; i++) {
+                    self.locations.push({
+                        title: venues[i].name, location: {
+                            lat: venues[i].location.lat,
+                            lng: venues[i].location.lng
+                        }
+                    });
+                    //For each location created show the marker, and highlight the
+                    //location in the list.
+                    self.showLocation(self.locations()[i]);
+                }
+            }
+        };
+
+        //Assemble the url using the search limit, queary parameters, and location.
+        var fourSquareURL = 'https://api.foursquare.com/v2/venues/search?' +
+            queryParam + 'limit=' + self.searchLimit() + '&near=' +
+            locationSearch +
+            '&client_id=DGB0B4YMP1PAQPMCB5OEAB51B14PABII45T12QY5EGWEI0HN&' +
+            'client_secret=TQ5RY024HNUEOQVVPV1GAQDKRQGUJSMBEZBIKATIYJ4TPVFO&v=20180608';
+
+        //Create and send the get request.
+        xhttp.open("GET", fourSquareURL, true);
+        xhttp.send();
     } else {
       //Define a default query paramater.
-      queryParam = 'query=Restaurant&';
+        window.alert('You must enter something to search for!');
+        return;
     }
-
-    //When the xhttp state changes, check if the request is good. If it is,
-    //parse through the json object storing the results. For each of the venues
-    //returned in the response create an array item and push it into the
-    //locations array.
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var venues = JSON.parse(this.response).response.venues;
-        self.locations([]);
-        for(i = 0; i < venues.length; i++) {
-          self.locations.push({
-            title: venues[i].name, location: {lat: venues[i].location.lat,
-               lng: venues[i].location.lng}
-          });
-          //For each location created show the marker, and highlight the
-          //location in the list.
-          self.showLocation(self.locations()[i]);
-        }
-      }
-    };
-
-    //Assemble the url using the search limit, queary parameters, and location.
-    var fourSquareURL ='https://api.foursquare.com/v2/venues/search?'+
-     queryParam +'limit='+self.searchLimit()+'&near='+
-     locationSearch+
-     '&client_id=DGB0B4YMP1PAQPMCB5OEAB51B14PABII45T12QY5EGWEI0HN&'+
-     'client_secret=TQ5RY024HNUEOQVVPV1GAQDKRQGUJSMBEZBIKATIYJ4TPVFO&v=20180608';
-
-    //Create and send the get request.
-    xhttp.open("GET", fourSquareURL, true);
-    xhttp.send();
   }
 
   //This function updates the map, create the visual style of the map, and
@@ -276,7 +278,7 @@ var ViewModel = function() {
 
       var address = self.currentFocus();
       if (address == '') {
-        window.alert('You must enter an area, or adress.')
+          window.alert('You must enter an area, or adress.');
       } else {
         geocoder.geocode({
         address: address,
