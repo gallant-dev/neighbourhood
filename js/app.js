@@ -500,6 +500,7 @@ var ViewModel = function() {
 function initMap() {
   vm.updateLocations();
   vm.updateMap();
+  calculateLayout();
 }
 
 //Modifies classes at specified breakpoints.
@@ -549,7 +550,6 @@ function calculateLayout() {
 }
 //Add debounce to prevent resizing function from being call too frequently.
 var stallLayout = _.debounce(calculateLayout, 300);
-
 $(window).on('resize', stallLayout);
 
 //Crete a new ViewModel and apply Knockout bindings to it.
