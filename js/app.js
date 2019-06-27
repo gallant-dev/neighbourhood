@@ -506,46 +506,46 @@ function initMap() {
 //Defines Breakpoints.
 $(window).on('resize', function () {
     if ($(window).width() < 400) {
+        $('#map').removeClass();
         $('#map').addClass('col-3');
-        $('#map').removeClass('col-9');
 
+        $('#menu').removeClass();
         $('#menu').addClass('col-9');
-        $('#menu').removeClass('col-3');
     }
     else if ($(window).width() >= 400 && $(window).width() < 521) {
-        $('#map').addClass('col-9');
-        $('#map').removeClass('col-3');
+        $('#map').removeClass();
+        $('#map').addClass('col-8');
 
-        $('#menu').addClass('col-3');
-        $('#menu').removeClass('col-9');
+        $('#menu').removeClass();
+        $('#menu').addClass('col-4');
     }
     else if ($(window).width() >= 521 && $(window).width() < 823) {
-        $('#map').addClass('col-9');
-        $('#map').removeClass('col-3');
+        $('#map').removeClass();
+        $('#map').addClass('col-7');
 
-        $('#menu').addClass('col-3');
-        $('#menu').removeClass('col-9');
+        $('#menu').removeClass();
+        $('#menu').addClass('col-5');
     }
     else if ($(window).width() >= 823 && $(window).width() < 1049) {
-        $('#map').addClass('col-9');
-        $('#map').removeClass('col-3');
+        $('#map').removeClass();
+        $('#map').addClass('col-8');
 
-        $('#menu').addClass('col-3');
-        $('#menu').removeClass('col-9');
+        $('#menu').removeClass();
+        $('#menu').addClass('col-4');
     }
     else if ($(window).width() >= 1049 && $(window).width() < 1312) {
+        $('#map').removeClass();
         $('#map').addClass('col-9');
-        $('#map').removeClass('col-3');
 
+        $('#menu').removeClass();
         $('#menu').addClass('col-3');
-        $('#menu').removeClass('col-9');
     }
     else {
-        $('#map').addClass('col-9');
-        $('#map').removeClass('col-3');
+        $('#map').removeClass();
+        $('#map').addClass('col-10');
 
-        $('#menu').addClass('col-3');
-        $('#menu').removeClass('col-9');
+        $('#menu').removeClass();
+        $('#menu').addClass('col-2');
     }
 });
 
