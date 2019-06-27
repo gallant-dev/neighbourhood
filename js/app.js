@@ -163,7 +163,7 @@ var ViewModel = function() {
         self.currentFocus = newFocus;
     //Zooms to the new location provided.
     self.zoomToArea(self.currentFocus());
-  }
+    }
 
     //This function queries the foursquare API to populate the locations array
     //with the venues obtained.
