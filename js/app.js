@@ -160,7 +160,7 @@ var ViewModel = function() {
   //turns off all markers, queries the foursquare API for new locations, and
   //zooms to the location on the map.
     self.setCurrentFocus = function (newFocus) {
-        self.currentFocus = newFocus;
+        self.currentFocus(newFocus);
     //Zooms to the new location provided.
     self.zoomToArea(self.currentFocus());
     }
@@ -196,7 +196,7 @@ var ViewModel = function() {
         //Assemble the url using the search limit, queary parameters, and location.
         var fourSquareURL = 'https://api.foursquare.com/v2/venues/search?' +
             queryParam + 'limit=' + self.searchLimit() + '&near=' +
-            self.currentFocus +
+            self.currentFocus() +
             '&client_id=DGB0B4YMP1PAQPMCB5OEAB51B14PABII45T12QY5EGWEI0HN&' +
             'client_secret=TQ5RY024HNUEOQVVPV1GAQDKRQGUJSMBEZBIKATIYJ4TPVFO&v=20180608';
 
