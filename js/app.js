@@ -36,6 +36,25 @@ var ViewModel = function() {
     }
   }
 
+    self.search = function () {
+        //Assign the value of the search input box to a variable.
+        var searchInputValue = document.getElementById('search-params').value;
+        var location = document.getElementById('location').value.replace(" ", "");
+        if (!searchInputValue && !location) {
+            window.alert("Please enter something to search for, and a location to search in.");
+        }
+        else if (location && !searchInputValue) {
+            window.alert("Please enter something to search for.");
+        }
+        else if (!location && searchInputValue) {
+            window.alert("Please enter a location to search in!");
+        }
+        else {
+            self.setCurrentFocus(location);
+            self.updateLocations(searchInputValue);
+        }
+    }
+
   //The function uses a provided location to find the associated marker.
   self.getMarkerForLocation = function(location) {
     //Marker and match count variables are defined so that when a marker is
@@ -140,11 +159,8 @@ var ViewModel = function() {
   //current focus of the application to the value provided in the search box,
   //turns off all markers, queries the foursquare API for new locations, and
   //zooms to the location on the map.
-  self.setCurrentFocus = function() {
-    //Sets the current focus using the information provided in the location
-    //text input box. The string has spaces removed in order to placed in to
-    //the query url in an appropriate format.
-    self.currentFocus(document.getElementById('location').value.replace(" ", ""));
+    self.setCurrentFocus = function (newFocus) {
+        self.currentFocus = newFocus;
     //Queries the foursquare API and updates the locations array with the
     //results.
     self.updateLocations();
@@ -154,7 +170,7 @@ var ViewModel = function() {
 
   //This function queries the foursquare API to populate the locations array
   //with the venues obtained.
-  self.updateLocations = function(){
+  self.updateLocations = function(searchInput){
     //Define a new emptry string to pass the query parameters into.
     var queryParam = "";
     //Set the location to be searched to the current focus fo the application.
@@ -162,12 +178,10 @@ var ViewModel = function() {
     //Define a new XMLHttpRequest object.
     var xhttp = new XMLHttpRequest();
 
-    //Assign the value of the search input box to a variable.
-    var searchInputValue = document.getElementById('search-params').value;
     //If there is a a value entered into the text box, take it and construct
     //the string to pass into the url.
     if(searchInputValue){
-        queryParam = 'query=' + searchInputValue + '&';
+        queryParam = 'query=' + searchInput + '&';
         //When the xhttp state changes, check if the request is good. If it is,
         //parse through the json object storing the results. For each of the venues
         //returned in the response create an array item and push it into the
