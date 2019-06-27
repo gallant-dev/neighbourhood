@@ -512,7 +512,35 @@ $(window).on('resize', function () {
         $('#menu').addClass('col-9');
         $('#menu').removeClass('col-3');
     }
-    else if ($(window).width() >= 400) {
+    else if ($(window).width() >= 400 && $(window).width() < 521) {
+        $('#map').addClass('col-9');
+        $('#map').removeClass('col-3');
+
+        $('#menu').addClass('col-3');
+        $('#menu').removeClass('col-9');
+    }
+    else if ($(window).width() >= 521 && $(window).width() < 823) {
+        $('#map').addClass('col-9');
+        $('#map').removeClass('col-3');
+
+        $('#menu').addClass('col-3');
+        $('#menu').removeClass('col-9');
+    }
+    else if ($(window).width() >= 823 && $(window).width() < 1049) {
+        $('#map').addClass('col-9');
+        $('#map').removeClass('col-3');
+
+        $('#menu').addClass('col-3');
+        $('#menu').removeClass('col-9');
+    }
+    else if ($(window).width() >= 1049 && $(window).width() < 1312) {
+        $('#map').addClass('col-9');
+        $('#map').removeClass('col-3');
+
+        $('#menu').addClass('col-3');
+        $('#menu').removeClass('col-9');
+    }
+    else {
         $('#map').addClass('col-9');
         $('#map').removeClass('col-3');
 
