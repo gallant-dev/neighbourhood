@@ -514,10 +514,10 @@ $(window).on('resize', function () {
     }
     else if ($(window).width() >= 400 && $(window).width() < 521) {
         $('#map').removeClass();
-        $('#map').addClass('col-8');
+        $('#map').addClass('col-6');
 
         $('#menu').removeClass();
-        $('#menu').addClass('col-4');
+        $('#menu').addClass('col-6');
     }
     else if ($(window).width() >= 521 && $(window).width() < 823) {
         $('#map').removeClass();
