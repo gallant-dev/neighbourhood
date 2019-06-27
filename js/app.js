@@ -161,22 +161,15 @@ var ViewModel = function() {
   //zooms to the location on the map.
     self.setCurrentFocus = function (newFocus) {
         self.currentFocus = newFocus;
-    //Queries the foursquare API and updates the locations array with the
-    //results.
-    self.updateLocations();
     //Zooms to the new location provided.
     self.zoomToArea(self.currentFocus());
   }
 
-  //This function queries the foursquare API to populate the locations array
-  //with the venues obtained.
-  self.updateLocations = function(searchInput){
-    //Define a new XMLHttpRequest object.
-    var xhttp = new XMLHttpRequest();
-
-    //If there is a a value entered into the text box, take it and construct
-    //the string to pass into the url.
-      if (searchInput){
+    //This function queries the foursquare API to populate the locations array
+    //with the venues obtained.
+    self.updateLocations = function (searchInput) {
+        //Define a new XMLHttpRequest object.
+        var xhttp = new XMLHttpRequest();
         var queryParam = 'query=' + searchInput + '&';
         //When the xhttp state changes, check if the request is good. If it is,
         //parse through the json object storing the results. For each of the venues
@@ -210,12 +203,7 @@ var ViewModel = function() {
         //Create and send the get request.
         xhttp.open("GET", fourSquareURL, true);
         xhttp.send();
-    } else {
-      //Define a default query paramater.
-        window.alert('You must enter something to search for!');
-        return;
     }
-  }
 
   //This function updates the map, create the visual style of the map, and
   //creating the global infoWindow for the map.
