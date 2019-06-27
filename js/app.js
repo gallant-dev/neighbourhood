@@ -145,8 +145,6 @@ var ViewModel = function() {
     //text input box. The string has spaces removed in order to placed in to
     //the query url in an appropriate format.
     self.currentFocus(document.getElementById('location').value.replace(" ", ""));
-    //Hides and removes all markers and unhighlights the associated list item.
-    self.toggleAllMarkers();
     //Queries the foursquare API and updates the locations array with the
     //results.
     self.updateLocations();
@@ -287,7 +285,8 @@ var ViewModel = function() {
           //Check to see if geocode request was successful.
           if (status == google.maps.GeocoderStatus.OK){
             self.map.setCenter(results[0].geometry.location)
-            self.map.setZoom(12);
+              self.map.setZoom(12);
+              self.toggleAllMarkers();
           } else {
             //If geocode is unsucessful, inform the user that they need to be
             //more specific or use better formatting.
@@ -295,7 +294,7 @@ var ViewModel = function() {
             try entering a more specfiic location, or use better formatting.
              (ie. City, State/Province, Country)`);
           }
-        });
+          });
       }
     } else {
       self.map.setCenter(point.location);
