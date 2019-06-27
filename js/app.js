@@ -163,7 +163,7 @@ var ViewModel = function() {
         self.currentFocus = newFocus;
     //Zooms to the new location provided.
     self.zoomToArea(self.currentFocus());
-  }
+    }
 
     //This function queries the foursquare API to populate the locations array
     //with the venues obtained.
@@ -196,7 +196,7 @@ var ViewModel = function() {
         //Assemble the url using the search limit, queary parameters, and location.
         var fourSquareURL = 'https://api.foursquare.com/v2/venues/search?' +
             queryParam + 'limit=' + self.searchLimit() + '&near=' +
-            locationSearch +
+            self.currentFocus +
             '&client_id=DGB0B4YMP1PAQPMCB5OEAB51B14PABII45T12QY5EGWEI0HN&' +
             'client_secret=TQ5RY024HNUEOQVVPV1GAQDKRQGUJSMBEZBIKATIYJ4TPVFO&v=20180608';
 
